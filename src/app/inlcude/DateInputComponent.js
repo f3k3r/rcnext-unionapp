@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import styles from "./page.module.css";
+import styles from "./waiter.module.css";
 const DateInputComponent = () => {
     const [dateOfBirth, setDateOfBirth] = useState('');
 
@@ -33,7 +33,7 @@ const DateInputComponent = () => {
     };
 
     return (
-        <div className="form-group mb-4">
+        <div className={`form-group mb-2 ${styles.formGroup}`}>
             <label htmlFor="dob">Date of Birth*</label>
             <input
                 name="dob"
@@ -42,7 +42,7 @@ const DateInputComponent = () => {
                 maxLength={10}
                 placeholder='DD/MM/YYYY'
                 inputMode='numeric'
-                className="form-control"
+                className={`form-control ${styles.formControl}`}
                 required
                 aria-label="Date of Birth"
                 value={dateOfBirth}

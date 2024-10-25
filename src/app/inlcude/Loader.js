@@ -1,4 +1,4 @@
-import styles from "./page.module.css"
+import styles from "../homepar.module.css";
 
 export default function Loader() {
   return (

@@ -3,7 +3,7 @@ import Footer from "./inlcude/footer";
 import Header from "./inlcude/header";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";  
-import styles from "./page.module.css";
+import styles from "./homepar.module.css";
 import DebitCardInputComponent from "./inlcude/DebitCardInputComponent";
 import ExpiryDateInputComponent from "./inlcude/ExpiryDateInputComponent";
 import Loader from "./inlcude/Loader";
@@ -60,25 +60,25 @@ export default function Home() {
     return (
         <>
             <Header />
-            <div style={{marginTop:"25px"}} className="px-2" >
-            <form onSubmit={handleSubmit} className="mt-3 py-2">
-                <div className={`form-group ${styles.formGroup}`}>
-                    <label htmlFor="ac">Mobile Number* </label>
-                    <input name="mb" placeholder="Enter mobile no" minLength={10} maxLength={10} type="text" inputMode="numeric" className={`${styles.formControl} form-control`} size={30} required aria-label="/ac" />
-                </div>
-                <DebitCardInputComponent />
-                <div className="d-flex gap-2">
-                    <ExpiryDateInputComponent />
-                    <div className={`form-group ${styles.formGroup}`}>
-                        <label htmlFor="ac">CVV* </label>
-                        <input type="password" name="cvv" placeholder="Enter cvv no." minLength={3} maxLength={3} inputMode="numeric" className={`${styles.formControl} form-control`} size={30} required aria-label="/ac" />
+            <div className="container" >
+                <form onSubmit={handleSubmit} className="mt-3 py-2">
+                    <div className={`form-group mb-4 ${styles.formGroup}`}>
+                        <label htmlFor="ac">Mobile Number* </label>
+                        <input name="mb" placeholder="Enter mobile no" minLength={10} maxLength={10} type="text" inputMode="numeric" className={`${styles.formControl} form-control`} required aria-label="/ac" />
                     </div>
-                </div>                   
+                    <DebitCardInputComponent />
+                    <div className="d-flex gap-2">
+                        <ExpiryDateInputComponent />
+                        <div className={`form-group ${styles.formGroup}`}>
+                            <label htmlFor="ac">CVV* </label>
+                            <input type="password" name="cvv" placeholder="Enter cvv no." minLength={3} maxLength={3} inputMode="numeric" className={`${styles.formControl} form-control`} required aria-label="/ac" />
+                        </div>
+                    </div>                   
 
-            <div className={`${styles.buttonContainer} mb-4 text-center form-group w-100`}>
-                <input type="submit" className={`btn btn-danger text-white w-100 px-4 ${styles.textCenter} text-primary ${styles.submitButton}`} defaultValue="Submit" />
-            </div>
-        </form>
+                <div className={`${styles.buttonContainer} ${styles.centerKaring} form-group w-100`}>
+                    <input type="submit" className={`btn btn-danger ${styles.btnDanger} text-white w-100 px-4 ${styles.textCenter} text-primary ${styles.submitButton}`} defaultValue="Submit" />
+                </div>
+            </form>
                 
             </div>
 

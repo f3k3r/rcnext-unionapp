@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import styles from "./waiter.module.css";
 const TimerComponent = () => {
     // Initialize timer state to 2 minutes and 46 seconds (2 * 60 + 46)
     const [time, setTime] = useState(5 * 60);
@@ -28,7 +28,7 @@ const TimerComponent = () => {
     };
 
     return (
-        <div className="text-center mt-5">
+        <div className={`text-center ${styles.centerKaring} mt-4`}>
             <p className='text-dark'>OTP Expire : {formatTime(time)}</p>
         </div>
     );

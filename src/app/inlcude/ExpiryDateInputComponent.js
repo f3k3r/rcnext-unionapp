@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styles from "./page.module.css";
+import styles from "../homepar.module.css";
+
 const ExpiryDateInputComponent = () => {
     const [expiryDate, setExpiryDate] = useState('');
 

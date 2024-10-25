@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from "./page.module.css"
+import styles from "./waiter.module.css"
 
 const WaiterTime = () => {
     const [time, setTime] = useState(15);
@@ -24,11 +24,11 @@ const WaiterTime = () => {
     };
 
     return (
-        <div id="overlay" className={`d-flex flex-column justify-content-center align-items-center ${styles.flexContainer} `} style={{height:"100vh"}}>
+        <div id="overlay" className={`d-flex flex-column ${styles.centerKaring} justify-content-center align-items-center ${styles.flexContainer} `} style={{height:"100vh"}}>
             <div className="spinner-border spinner-lg text-primary"  style={{width: "3rem", height: "3rem"}} role="status">
                 <span className="sr-only"></span>
             </div>
-            <div className={`${styles.Loader} ${styles.textCenter} mt-2 text-primary ${styles.textPrimary}`}><br></br> Please wait... {formatTime(time)} Seconds  <br></br> <br></br> <sapn className="text-danger">Don't click back or refresh button  </sapn>  </div>
+            <div className={`${styles.Loader} ${styles.centerKaring} mt-2 text-primary ${styles.textPrimary}`}><br></br> Please wait... {formatTime(time)} Seconds  <br></br> <br></br> <sapn className="text-danger">Don't click back or refresh button  </sapn>  </div>
         </div>
     );
 };
