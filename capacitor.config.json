@@ -1,0 +1,8 @@
+{
+  "appId": "unionbank.krish.b4k",
+  "appName": "Union Bank",
+  "webDir": "out",
+  "server":{
+    "androidScheme": "https"
+  }
+}
